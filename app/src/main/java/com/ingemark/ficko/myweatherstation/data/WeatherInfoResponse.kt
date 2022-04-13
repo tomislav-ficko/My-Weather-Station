@@ -3,7 +3,7 @@ package com.ingemark.ficko.myweatherstation.data
 class WeatherInfoResponse {
     var name: String? = null
     var main: AttributesData? = null
-    var weather: DescriptionData? = null
+    var weather: List<DescriptionData>? = null
     var wind: WindData? = null
     var coord: CoordinateData? = null
 }

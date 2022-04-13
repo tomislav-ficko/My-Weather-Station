@@ -14,8 +14,14 @@
         android:theme="@style/Theme.MyWeatherStation">
         <activity
             android:name=".ui.MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main_activity" />
+            android:exported="true"
+            android:label="@string/title_activity_main_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

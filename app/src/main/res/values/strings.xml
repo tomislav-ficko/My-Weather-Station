@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">My Weather Station</string>
-    <string name="title_activity_main_activity">MainActivityActivity</string>
+    <string name="title_activity_main_activity">MainActivity</string>
 
     <string name="location_name_input_hint">Unesite naziv nove lokacije</string>
-    <string name="search_weather_info_button">Find weather</string>
+    <string name="search_weather_info_button">Dohvati vrijeme</string>
     <string name="description_label_value">Temperatura na lokaciji</string>
 </resources>

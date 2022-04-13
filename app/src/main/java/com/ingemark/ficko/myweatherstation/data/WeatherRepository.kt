@@ -7,7 +7,7 @@ class WeatherRepository(
     private val mapper: WeatherMapper
 ) {
 
-    fun getWeatherInfo(locationName: String): WeatherInfo {
+    suspend fun getWeatherInfo(locationName: String): WeatherInfo {
         val appId = ""
         val response = api.getWeatherInfo(locationName, appId)
         return mapper.mapWeatherInfoResponseToWeatherInfo(response)
