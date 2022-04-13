@@ -5,4 +5,12 @@
     <string name="location_name_input_hint">Unesite naziv nove lokacije</string>
     <string name="search_weather_info_button">Dohvati vrijeme</string>
     <string name="description_label_value">Temperatura na lokaciji</string>
+
+    <string name="location_label_value">Lokacija:</string>
+    <string name="weather_description_label_value">Opis:</string>
+    <string name="temperature_label_value">Temperatura:</string>
+    <string name="pressure_label_value">Atmosferski pritisak:</string>
+    <string name="humidity_label_value">Vlaga:</string>
+    <string name="wind_speed_label_value">Brzina vjetra:</string>
+    <string name="lat_lon_label_value">Geografska pozicija:</string>
 </resources>
