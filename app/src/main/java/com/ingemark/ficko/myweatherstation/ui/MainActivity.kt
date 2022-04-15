@@ -1,5 +1,6 @@
 package com.ingemark.ficko.myweatherstation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -25,8 +26,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun buttonClicked() {
-        // check if input field is not empty
-        // start new activity and pass location name
+        val inputLocationName = binding.locationNameInput.text
+        if (inputLocationName.isNotEmpty()) {
+            startActivity(
+                Intent(this, DetailsActivity::class.java)
+                    .putExtra(DetailsActivity.LOCATION_NAME, inputLocationName)
+            )
+        }
     }
 
     private fun observeViewModel() {

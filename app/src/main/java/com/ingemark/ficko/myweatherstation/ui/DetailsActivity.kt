@@ -4,8 +4,14 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.ingemark.ficko.myweatherstation.databinding.DetailsActivityBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
+
+    companion object {
+        const val LOCATION_NAME = "location_name"
+    }
 
     private lateinit var binding: DetailsActivityBinding
     private val viewModel: WeatherViewModel by viewModels()
@@ -17,7 +23,6 @@ class DetailsActivity : AppCompatActivity() {
         observeViewModel()
         setupScreen()
     }
-
 
     private fun observeViewModel() {
         viewModel.getWeatherInfoSuccess.observe(this) { weatherInfo ->
@@ -36,5 +41,12 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun setupScreen() {
         binding.activity = this
+        getWeatherData()
+    }
+
+    private fun getWeatherData() {
+        intent.extras?.get(LOCATION_NAME)?.let { requestedLocationName ->
+            viewModel.getWeatherInfo(requestedLocationName.toString())
+        }
     }
 }
