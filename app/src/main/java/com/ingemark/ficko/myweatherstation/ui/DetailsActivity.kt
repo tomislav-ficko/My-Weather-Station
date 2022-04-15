@@ -3,6 +3,7 @@ package com.ingemark.ficko.myweatherstation.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.ingemark.ficko.myweatherstation.R
 import com.ingemark.ficko.myweatherstation.databinding.DetailsActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,16 +27,15 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         viewModel.getWeatherInfoSuccess.observe(this) { weatherInfo ->
-            binding.locationName.text = weatherInfo.locationName
-            binding.weatherDescriptionValue.text = weatherInfo.description?.toString()
-            binding.temperatureValue.text = weatherInfo.temperature?.toString()
-            binding.humidityValue.text = weatherInfo.humidity?.toString()
-            binding.pressureValue.text = weatherInfo.pressure?.toString()
-            binding.windSpeedValue.text = weatherInfo.windSpeed?.toString()
-            val latitude = weatherInfo.latitude?.toString() ?: "NA"
-            val longitude = weatherInfo.longitude?.toString() ?: "NA"
-            val geographicalLocation = "$latitude, $longitude"
-            binding.latLonValue.text = geographicalLocation
+            binding.apply {
+                locationName.text = weatherInfo.locationName
+                weatherDescriptionValue.text = weatherInfo.description
+                temperatureValue.text = getString(R.string.template_temperature, weatherInfo.temperature)
+                humidityValue.text = getString(R.string.template_humidity, weatherInfo.humidity)
+                pressureValue.text = getString(R.string.template_pressure, weatherInfo.pressure)
+                windSpeedValue.text = getString(R.string.template_wind_speed, weatherInfo.windSpeed)
+                latLonValue.text = getString(R.string.template_geo_location, weatherInfo.latitude, weatherInfo.longitude)
+            }
         }
     }
 

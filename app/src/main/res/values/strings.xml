@@ -13,4 +13,10 @@
     <string name="humidity_label_value">Vlaga:</string>
     <string name="wind_speed_label_value">Brzina vjetra:</string>
     <string name="lat_lon_label_value">Geografska pozicija:</string>
+
+    <string name="template_temperature">%1$.2f °C</string>
+    <string name="template_humidity">%1$d %%</string>
+    <string name="template_pressure">%1$d hPa</string>
+    <string name="template_wind_speed">%1$.2f m/s</string>
+    <string name="template_geo_location">%1$.4f, %2$.4f</string>
 </resources>

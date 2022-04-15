@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.ingemark.ficko.myweatherstation.R
 import com.ingemark.ficko.myweatherstation.databinding.MainActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun observeViewModel() {
         viewModel.getWeatherInfoSuccess.observe(this) { weatherInfo ->
             binding.locationName.text = weatherInfo.locationName
-            binding.temperatureValue.text = weatherInfo.temperature?.toString()
+            binding.temperatureValue.text = getString(R.string.template_temperature, weatherInfo.temperature)
         }
     }
 

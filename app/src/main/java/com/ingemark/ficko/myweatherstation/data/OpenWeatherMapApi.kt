@@ -8,6 +8,7 @@ interface OpenWeatherMapApi {
     @GET("data/2.5/weather")
     suspend fun getWeatherInfo(
         @Query("q") locationName: String,
-        @Query("appid") appId: String
+        @Query("appid") appId: String,
+        @Query("units") units: String = "metric"
     ): WeatherInfoResponse
 }
