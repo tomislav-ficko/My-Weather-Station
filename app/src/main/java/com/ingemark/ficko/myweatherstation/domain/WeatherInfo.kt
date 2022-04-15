@@ -1,4 +1,4 @@
-package com.ingemark.ficko.myweatherstation.model
+package com.ingemark.ficko.myweatherstation.domain
 
 class WeatherInfo {
     var locationName: String? = null

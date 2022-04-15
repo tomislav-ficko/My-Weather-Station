@@ -3,7 +3,7 @@ package com.ingemark.ficko.myweatherstation.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ingemark.ficko.myweatherstation.data.WeatherRepository
-import com.ingemark.ficko.myweatherstation.model.WeatherInfo
+import com.ingemark.ficko.myweatherstation.domain.WeatherInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

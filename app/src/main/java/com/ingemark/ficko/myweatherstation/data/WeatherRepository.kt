@@ -1,6 +1,6 @@
 package com.ingemark.ficko.myweatherstation.data
 
-import com.ingemark.ficko.myweatherstation.model.WeatherInfo
+import com.ingemark.ficko.myweatherstation.domain.WeatherInfo
 
 class WeatherRepository(
     private val api: OpenWeatherMapApi,
