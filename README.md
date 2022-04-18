@@ -13,7 +13,7 @@ Basic Android app for showcasing good coding practices, primarily developed for 
   - Location name
   - Weather explanation
   - Temperature
-  - Moisture
+  - Humidity
   - Pressure
   - Wind speed
   - Geographical location data (latitude and longitude)
