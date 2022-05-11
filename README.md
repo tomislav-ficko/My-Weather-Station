@@ -29,6 +29,7 @@ EESTEC LC Zagreb.
 
 The following picture defines project structure and how information flows between layers of the application:
 <br>
+
 ![Project Structure](project-structure.png)
 
 ## Tech stack
