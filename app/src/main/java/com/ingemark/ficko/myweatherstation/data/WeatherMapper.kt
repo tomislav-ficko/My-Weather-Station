@@ -4,6 +4,11 @@ import com.ingemark.ficko.myweatherstation.domain.WeatherInfo
 
 class WeatherMapper {
 
+    /*
+        Mappers on the data layer are used to convert data from a backend model (which is received from the API)
+        to a domain model, which will be used throughout the app
+    */
+
     fun mapWeatherInfoResponseToWeatherInfo(response: WeatherInfoResponse?): WeatherInfo {
         return WeatherInfo().apply {
             locationName = response?.name

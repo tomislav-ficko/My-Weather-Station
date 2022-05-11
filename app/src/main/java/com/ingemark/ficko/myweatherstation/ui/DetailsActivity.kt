@@ -22,7 +22,7 @@ class DetailsActivity : AppCompatActivity() {
         binding = DetailsActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         observeViewModel()
-        setupScreen()
+        getWeatherData()
     }
 
     private fun observeViewModel() {
@@ -37,11 +37,6 @@ class DetailsActivity : AppCompatActivity() {
                 latLonValue.text = getString(R.string.template_geo_location, weatherInfo.latitude, weatherInfo.longitude)
             }
         }
-    }
-
-    private fun setupScreen() {
-        binding.activity = this
-        getWeatherData()
     }
 
     private fun getWeatherData() {

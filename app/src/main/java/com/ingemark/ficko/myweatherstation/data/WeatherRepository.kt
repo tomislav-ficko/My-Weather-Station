@@ -7,9 +7,13 @@ class WeatherRepository(
     private val mapper: WeatherMapper
 ) {
 
+    /*
+        Repositories are used to gather data from various sources (e.g. database, local cache, API)
+        and provide it to the lower levels in the app (mainly the ViewModel)
+    */
+
     suspend fun getWeatherInfo(locationName: String): WeatherInfo {
-        val appId = ""
-        val response = api.getWeatherInfo(locationName, appId)
+        val response = api.getWeatherInfo(locationName)
         return mapper.mapWeatherInfoResponseToWeatherInfo(response)
     }
 }
