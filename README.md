@@ -3,7 +3,7 @@ Basic Android app for showcasing good coding practices, primarily developed for 
 
 ### Requirements:
 - The app needs to implement OpenWeatherMap's Weather API
-- API call example: https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}
+- API call example: https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}&units=metric
 <br>
 
 - The final app must contain two screens
@@ -19,6 +19,10 @@ Basic Android app for showcasing good coding practices, primarily developed for 
   - Geographical location data (latitude and longitude)
 - In order to keep the app simple, back functionality will be handled through the back button (separate back button doesn't need to be added to the top bar)
 - Some requirements, such as design and optimization, are omitted on purpose. They can be implemented at will
+
+## Project structure
+The following picture defines project structure and how information flows between layers of the application:
+![Project Structure](project-structure.png)
 
 ## Tech stack
 - MVVM architecture
