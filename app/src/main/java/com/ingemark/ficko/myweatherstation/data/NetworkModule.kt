@@ -13,6 +13,18 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    /*
+       This object tells Hilt (the dependency injection library) how to create certain objects. When Hilt creates an object,
+       it exist in the background of the application and is provided to any class that needs it.
+
+       E.g. The repository needs the API and mapper in order to function properly. When the WeatherRepository object is being created,
+       Hilt looks around to find if the Api and Mapper objects exist (since they are the dependencies of the repository object).
+       - If they exist, it retrieves and adds them to the Repository constructor.
+       - If they don't already exist, Hilt executes one of the lower function which creates an object of the needed type
+         (i.e. "provideOpenWeatherMapApi(..)" or "provideWeatherMapper()") and then adds it to the Repository constructor.
+
+    */
+
     private const val BASE_URL = "https://api.openweathermap.org/"
 
     @Singleton
