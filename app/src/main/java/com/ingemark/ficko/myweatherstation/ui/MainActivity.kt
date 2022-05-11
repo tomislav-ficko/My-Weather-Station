@@ -29,11 +29,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        observeViewModel()
         setupScreen()
+        observeViewModel()
+        getWeatherData()
     }
 
-    fun buttonClicked() {
+    private fun setupScreen() {
+        binding.searchButton.setOnClickListener { buttonClicked() }
+    }
+
+    private fun buttonClicked() {
         val inputLocationName = binding.locationNameInput.text
         if (inputLocationName.isNotEmpty()) {
             startActivity(
@@ -50,8 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupScreen() {
-        binding.activity = this
+    private fun getWeatherData() {
         viewModel.getWeatherInfo(INITIAL_LOCATION_NAME)
     }
 }
