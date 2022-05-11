@@ -13,8 +13,7 @@ class WeatherRepository(
     */
 
     suspend fun getWeatherInfo(locationName: String): WeatherInfo {
-        val appId = ""
-        val response = api.getWeatherInfo(locationName, appId)
+        val response = api.getWeatherInfo(locationName)
         return mapper.mapWeatherInfoResponseToWeatherInfo(response)
     }
 }
